@@ -194,18 +194,18 @@
               </ul>
             </div>
           </div>
-          <div class="search-bar">
-            <form action="" class="search-bar__form">
-              <input type="text" class="font-input" />
-            </form>
-            <a href="#!" class="search-icon">
-              <i class="search-icon fa-solid fa-magnifying-glass"></i>
-            </a>
-          </div>
+          <nav class="search-bar">
+            <div class="search-bar__form">
+              <input type="text" placeholder="Tìm Kiếm" class="font-input" />
+            </div>
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </nav>
           <nav class="navbar">
             <ul class="narbar__list">
-              <li class="narbar__item">
-                <a href="#!" class="narbar__link noti">
+              <li class="narbar__item noti">
+                <a href="#!" class="narbar__link">
                   <i class="fa-regular fa-bell"></i>
                   Thông báo
                 </a>
@@ -216,11 +216,15 @@
                   Giỏ Hàng
                 </a>
               </li>
-              <li class="narbar__item">
-                <a href="#!" class="narbar__link acc">
+              <li class="narbar__item acc">
+                <a href="#!" class="narbar__link">
                   <i class="fa-solid fa-user"></i>
                   Tài Khoản
                 </a>
+                <div class="accout-form">
+                  <button class="btn btn-log">đăng nhập</button>
+                  <button class="btn btn-sign">đăng ký</button>
+                </div>
               </li>
             </ul>
           </nav>
