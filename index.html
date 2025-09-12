@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- css -->
     <link rel="stylesheet" href="./accest/css/reset.css" />
@@ -17,6 +24,208 @@
     <title>Nhà Sách SGU</title>
   </head>
   <body>
-    <h1>test font</h1>
+    <header class="header">
+      <div class="container">
+        <div class="header-top">
+          <a href="/" class="logo-sgu">
+            <img
+              src="./accest/img/logo-sgu.png"
+              alt="Nhà Sách SGU"
+              class="logo"
+            />
+          </a>
+          <div class="menu">
+            <div class="menu__icon">
+              <a href="#!" class="menu__icon--link">
+                <img
+                  src="./accest/img/ico_menu.svg"
+                  alt="menu"
+                  class="menu-icon"
+                />
+              </a>
+            </div>
+            <div class="menu__dropdown">
+              <div class="menu__dropdown--tilte">
+                <ul>
+                  <li class="menu__dropdown--tilte">
+                    <a href="#" class="menu-tilte"
+                      ><strong>Danh Mục Sách</strong></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <ul class="menu__dropdown--list">
+                <li>
+                  <a href="#">
+                    <strong>Văn Học</strong>
+                  </a>
+                  <ul class="submenu">
+                    <li>
+                      <a href="#"> Tiểu Thuyết</a>
+                    </li>
+                    <li>
+                      <a href="#"> Truyện Ngắn </a>
+                    </li>
+                    <li>
+                      <a href="#">Thơ</a>
+                    </li>
+                    <li>
+                      <a href="#">Văn Học Việt Nam</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <strong>Kinh Tế</strong>
+                  </a>
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">Kinh Tế Học</a>
+                    </li>
+                    <li>
+                      <a href="#">Quản Trị Kinh Doanh</a>
+                    </li>
+                    <li>
+                      <a href="#">Tài chính ngân hàng</a>
+                    </li>
+                    <li>
+                      <a href="#">Marketing</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <strong>Tâm Lý</strong>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">Tâm Lý Học</a>
+                    </li>
+                    <li>
+                      <a href="#">Kỹ Năng Sống</a>
+                    </li>
+                    <li>
+                      <a href="#">Kỹ Năng Mềm</a>
+                    </li>
+                    <li>
+                      <a href="#"> Tâm Lý Hành Vi</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <strong>Khoa Học</strong>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">Công Nghệ Thông Tin</a>
+                    </li>
+                    <li>
+                      <a href="#">Điện tử</a>
+                    </li>
+                    <li>
+                      <a href="#">Khoa Học Vũ Trụ</a>
+                    </li>
+                    <li>
+                      <a href="#">Y Học</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <strong>Ngoại Ngữ</strong>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">Anh</a>
+                    </li>
+                    <li>
+                      <a href="#">Đức</a>
+                    </li>
+                    <li>
+                      <a href="#">Ý</a>
+                    </li>
+                    <li>
+                      <a href="#">Nhật</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">
+                    <strong>Tài Liệu</strong>
+                  </a>
+
+                  <ul class="submenu">
+                    <li>
+                      <a href="#">Chuyên Ngành</a>
+                    </li>
+                    <li>
+                      <a href="#">Môn Chung</a>
+                    </li>
+                    <li>
+                      <a href="#">Bài Tập</a>
+                    </li>
+                    <li>
+                      <a href="#">Chép Tay</a>
+                    </li>
+                    <li>
+                      <a href="#">Xem Tất Cả</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="search-bar">
+            <form action="" class="search-bar__form">
+              <input type="text" class="font-input" />
+            </form>
+            <a href="#!" class="search-icon">
+              <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            </a>
+          </div>
+          <nav class="navbar">
+            <ul class="narbar__list">
+              <li class="narbar__item">
+                <a href="#!" class="narbar__link noti">
+                  <i class="fa-regular fa-bell"></i>
+                  Thông báo
+                </a>
+              </li>
+              <li class="narbar__item">
+                <a href="#!" class="narbar__link cart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Giỏ Hàng
+                </a>
+              </li>
+              <li class="narbar__item">
+                <a href="#!" class="narbar__link acc">
+                  <i class="fa-solid fa-user"></i>
+                  Tài Khoản
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
   </body>
 </html>
