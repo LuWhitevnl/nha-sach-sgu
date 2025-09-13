@@ -231,5 +231,78 @@
         </div>
       </div>
     </header>
+    <section class="hero">
+      <section class="hero__slider">
+        <div class="hero__slider--box">
+          <img src="./accest/img/banner/banner1.jpg" alt="banner1" />
+          <img src="./accest/img/banner/banner2.jpg" alt="banner2" />
+          <img src="./accest/img/banner/banner3.jpg" alt="banner3" />
+          <img src="./accest/img/banner/banner4.jpg" alt="banner4" />
+          <img src="./accest/img/banner/banner-right1.webp" alt="banner5" />
+        </div>
+
+        <button class="hero__btn prev">&#10094;</button>
+        <button class="hero__btn next">&#10095;</button>
+
+        <div class="dot-container">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </section>
+      <section class="hero__ad">
+        <div class="ad">
+          <img src="./accest/img/banner/banner-right.webp" alt="ad1" />
+        </div>
+        <div class="ad">
+          <img src="./accest/img/banner/banner-right1.webp" alt="ad2" />
+        </div>
+      </section>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sliderBox = document.querySelector(".hero__slider--box");
+        const slides = sliderBox.querySelectorAll("img");
+        const dots = document.querySelectorAll(".dot-container .dot");
+        const prevBtn = document.querySelector(".hero__btn.prev");
+        const nextBtn = document.querySelector(".hero__btn.next");
+
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        const showSlide = (index) => {
+          sliderBox.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach((dot) => dot.classList.remove("active"));
+          dots[index].classList.add("active");
+        };
+
+        const nextSlide = () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          showSlide(currentIndex);
+        };
+
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", nextSlide);
+
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", () => {
+            currentIndex = i;
+            showSlide(currentIndex);
+          });
+        });
+
+        // tự động chạy mỗi 3s
+        // setInterval(nextSlide, 6000);
+
+        // khởi tạo
+        // showSlide(currentIndex);
+      });
+    </script>
   </body>
 </html>
