@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "văn học",
+      "subcategories": [
+        {
+          "id": 101,
+          "name": "tiểu thuyết",
+          "submenu": [
+            {
+              "id": 1011,
+              "title": "Mưa Đỏ",
+              "author": "Chu Lai",
+              "price": "205.000",
+              "year": "2025",
+              "img": "./accest/img/book/văn học/tieuthuyet/muado.webp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

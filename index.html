@@ -231,78 +231,458 @@
         </div>
       </div>
     </header>
-    <section class="hero">
-      <section class="hero__slider">
-        <div class="hero__slider--box">
-          <img src="./accest/img/banner/banner1.jpg" alt="banner1" />
-          <img src="./accest/img/banner/banner2.jpg" alt="banner2" />
-          <img src="./accest/img/banner/banner3.jpg" alt="banner3" />
-          <img src="./accest/img/banner/banner4.jpg" alt="banner4" />
-          <img src="./accest/img/banner/banner-right1.webp" alt="banner5" />
-        </div>
+    <main class="main">
+      <section class="hero">
+        <section class="hero__slider">
+          <div class="hero__slider--wrapper">
+            <div class="hero__slider--box">
+              <img src="./accest/img/banner/banner1.jpg" alt="banner1" />
+              <img src="./accest/img/banner/banner2.jpg" alt="banner2" />
+              <img src="./accest/img/banner/banner3.jpg" alt="banner3" />
+              <img src="./accest/img/banner/banner4.jpg" alt="banner4" />
+              <img src="./accest/img/banner/banner-right1.webp" alt="banner5" />
+            </div>
+          </div>
 
-        <button class="hero__btn prev">&#10094;</button>
-        <button class="hero__btn next">&#10095;</button>
+          <div class="btn-box">
+            <button class="hero__btn prev">&#10094;</button>
+            <button class="hero__btn next">&#10095;</button>
+          </div>
 
-        <div class="dot-container">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
+          <div class="dot-container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </section>
+        <section class="hero__ad">
+          <div class="ad">
+            <img src="./accest/img/banner/banner-right.webp" alt="ad1" />
+          </div>
+          <div class="ad">
+            <img src="./accest/img/banner/banner-right1.webp" alt="ad2" />
+          </div>
+        </section>
       </section>
-      <section class="hero__ad">
-        <div class="ad">
-          <img src="./accest/img/banner/banner-right.webp" alt="ad1" />
-        </div>
-        <div class="ad">
-          <img src="./accest/img/banner/banner-right1.webp" alt="ad2" />
-        </div>
+
+      <!-- -----------content----------------- -->
+      <section class="flashSale">
+        <section class="fs-container">
+          <div class="fs-header">
+            <div class="fs-header__left">
+              <a href="#" class="fs-icon">
+                <img src="./accest/img/label-flashsale.svg" alt="flashSale" />
+              </a>
+              <div class="flash-sale--time">
+                <span class="clock">
+                  <span id="hour">00</span> : <span id="minute">00</span> :
+                  <span id="seconds">00</span>
+                </span>
+              </div>
+            </div>
+            <div class="fs-header__right">
+              <a href="#" class="show-sale">
+                <span>xem tất cả</span>
+                <span>&#10095;</span>
+              </a>
+            </div>
+          </div>
+          <div class="fs-slider">
+            <div class="fs-slider__container">
+              <ul class="fs-slider__container--list">
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đỏ</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fs-slider__item">
+                  <div class="item-box">
+                    <div class="item-content">
+                      <!-- ---------ảnh sản phẩm ------------------ -->
+                      <div class="item-content__img-wrap">
+                        <div class="item-content__img">
+                          <a href="#" title="Mưa Đỏ" class="product-img">
+                            <img
+                              class="img-loaded"
+                              src="./accest/img/book/văn học/tieuthuyet/muado.webp"
+                              alt="Sách Mưa Đỏ"
+                              loading="lazy"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                      <!-- -------------thông tin------------------ -->
+                      <div class="item-content__decs">
+                        <h3 class="title-item">Mưa Đen</h3>
+                        <div class="price-lable">
+                          <p class="special-price">
+                            <span class="price">184.500 đ</span>
+                            <span class="discount">10%</span>
+                          </p>
+                          <p class="old-price">205.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="fs-btn fs-prev">&#10094;</div>
+            <div class="fs-btn fs-next">&#10095;</div>
+          </div>
+        </section>
       </section>
-    </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const sliderBox = document.querySelector(".hero__slider--box");
-        const slides = sliderBox.querySelectorAll("img");
-        const dots = document.querySelectorAll(".dot-container .dot");
-        const prevBtn = document.querySelector(".hero__btn.prev");
-        const nextBtn = document.querySelector(".hero__btn.next");
 
-        let currentIndex = 0;
-        const totalSlides = slides.length;
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae cum
+        consectetur expedita! Velit tempore voluptates qui sunt hic, neque
+        tenetur animi maxime quasi ex error illum dolor veniam nulla soluta!
+        Nisi nesciunt obcaecati provident, quidem porro ex. Impedit, dolorum.
+        Facilis suscipit esse fugit, expedita nisi velit eligendi ullam quisquam
+        excepturi blanditiis doloribus ut modi laudantium perferendis nobis
+        officiis quas totam. Unde, architecto. Praesentium, laudantium quas
+        dolorem dolor ipsa, incidunt ipsam similique consectetur vitae veniam
+        expedita ea ab! Ipsam, facilis praesentium tempora error eius et cumque
+        veritatis nobis itaque, perferendis maxime! Iure voluptate doloribus
+        fugit quisquam. Recusandae voluptate eveniet eligendi amet laborum
+        similique, est distinctio a incidunt, totam cumque ex voluptates nihil
+        suscipit sit magnam? Labore sequi quasi voluptatem cum aut. Itaque
+        sapiente qui dolorem provident quibusdam molestias incidunt voluptatum
+        voluptas? Sint totam voluptatum natus magnam vel fugit commodi dolores
+        consectetur. Incidunt nobis fugit quaerat neque nemo accusantium,
+        laboriosam inventore? Recusandae! Debitis molestias odit, labore
+        repellat perspiciatis repellendus! Beatae quod possimus alias amet iste
+        cum, impedit explicabo odit maiores ullam esse rerum temporibus non aut
+        voluptatem dolores dicta accusamus corporis dolorem!
+      </p>
 
-        const showSlide = (index) => {
-          sliderBox.style.transform = `translateX(-${index * 100}%)`;
-          dots.forEach((dot) => dot.classList.remove("active"));
-          dots[index].classList.add("active");
-        };
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const sliderBox = document.querySelector(".hero__slider--box");
+          const slides = sliderBox.querySelectorAll("img");
+          const dots = document.querySelectorAll(".dot-container .dot");
+          const prevBtn = document.querySelector(".hero__btn.prev");
+          const nextBtn = document.querySelector(".hero__btn.next");
 
-        const nextSlide = () => {
-          currentIndex = (currentIndex + 1) % totalSlides;
-          showSlide(currentIndex);
-        };
+          let currentIndex = 0;
+          const totalSlides = slides.length;
 
-        prevBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-          showSlide(currentIndex);
-        });
+          const showSlide = (index) => {
+            sliderBox.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot) => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+          };
 
-        nextBtn.addEventListener("click", nextSlide);
+          const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+          };
 
-        dots.forEach((dot, i) => {
-          dot.addEventListener("click", () => {
-            currentIndex = i;
+          prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
             showSlide(currentIndex);
           });
+
+          nextBtn.addEventListener("click", nextSlide);
+
+          dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+              currentIndex = i;
+              showSlide(currentIndex);
+            });
+          });
+
+          // tự động chạy mỗi 3s
+          setInterval(nextSlide, 6000);
+
+          // khởi tạo
+          showSlide(currentIndex);
+
+          // flash-sale
+          //clock
+          function updateClock() {
+            const now = new Date();
+            const hour = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+            const seconds = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("hour").innerHTML = hour;
+            document.getElementById("minute").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+          }
+
+          setInterval(updateClock, 1000);
+
+          //fs-slider
         });
-
-        // tự động chạy mỗi 3s
-        // setInterval(nextSlide, 6000);
-
-        // khởi tạo
-        // showSlide(currentIndex);
-      });
-    </script>
+      </script>
+    </main>
+    <script src="./accest/js/main.js"></script>
   </body>
 </html>
