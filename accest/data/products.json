@@ -1,24 +1,65 @@
 {
-  "categories": [
-    {
-      "id": 1,
-      "name": "văn học",
-      "subcategories": [
-        {
-          "id": 101,
-          "name": "tiểu thuyết",
-          "submenu": [
-            {
-              "id": 1011,
-              "title": "Mưa Đỏ",
-              "author": "Chu Lai",
-              "price": "205.000",
-              "year": "2025",
-              "img": "./accest/img/book/văn học/tieuthuyet/muado.webp"
-            }
-          ]
-        }
-      ]
+  "TatCaSach": {
+    "VanHoc": {
+      "name": "Văn Học",
+      "TieuThuyet": {
+        "name": "Tiểu Thuyết",
+        "book": [
+          {
+            "title": "Mưa Đỏ",
+            "price": 184500,
+            "old_price": 205000,
+            "discount": "10%",
+            "image": "./accest/img/book/văn học/tieuthuyet/muado.webp"
+          },
+          {
+            "title": "Cây Cam Ngọt Của Tôi",
+            "price": 108.0,
+            "old_price": 108.0,
+            "discount": "15%",
+            "image": "./accest/img/book/văn học/tieuthuyet/cay-cam-ngot-cua-toi.webp"
+          }
+        ]
+      },
+      "Tho": {
+        "name": "Thơ",
+        "book": [
+          {
+            "title": "Thơ Xuân Diệu",
+            "price": 95000,
+            "old_price": 120000,
+            "discount": "20%",
+            "image": "./accest/img/book/văn học/tho/xuandieu.webp"
+          }
+        ]
+      }
+    },
+    "KinhTe": {
+      "name": "Kinh Tế",
+      "KinhTeHoc": {
+        "name": "Kinh Tế Học",
+        "book": [
+          {
+            "title": "Kinh tế học",
+            "price": 200000,
+            "old_price": 250000,
+            "discount": "20%",
+            "image": "./accest/img/book/kinhte/kinhtehoc.webp"
+          }
+        ]
+      },
+      "Marketing": {
+        "name": "Marketting",
+        "book": [
+          {
+            "title": "Nghệ thuật Marketing",
+            "price": 175000,
+            "old_price": 210000,
+            "discount": "15%",
+            "image": "./accest/img/book/kinhte/marketing.webp"
+          }
+        ]
+      }
     }
-  ]
+  }
 }

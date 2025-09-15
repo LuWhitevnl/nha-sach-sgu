@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./accest/css/reset.css" />
+    <link rel="stylesheet" href="./accest/css/style.css" />
+    <title>Nhà Sách SGU</title>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main class="main">
+      <section class="main-top">
+        <section class="menu breadcrumb">
+          <a href="./index.html" class="current">Trang Chủ</a>
+        </section>
+      </section>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="menu-left">
+            <div class="group-menu">
+              <!-- tree
+                      all 
+                          vanhoc
+                              tieuthuyet
+                              tho
+                              ...
+                          kinhte
+                              kinhtehoc
+                              marketing
+                          ... -->
+              <h3>Nhóm Sản Phẩm</h3>
+              <ul class="menu-side menu"></ul>
+            </div>
+            <div class="filter">
+              <div class="filter-price">
+                <h3>Giá</h3>
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-check"
+                    value="0-100000"
+                  />
+                  0đ - 100,000 đ</label
+                ><br />
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-check"
+                    value="100000-200000"
+                  />
+                  100,000 đ - 200,000 đ</label
+                ><br />
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-check"
+                    value="200000-500000"
+                  />
+                  200,000 đ - 500,000 đ</label
+                ><br />
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-check"
+                    value="500000-Infinity"
+                  />
+                  Trên 500,000 đ</label
+                ><br />
+              </div>
+              <div class="filter-age"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="toolbar">
+            <div class="tool-filter"></div>
+            <div class="tool-sort"><span>sắp xếp theo</span></div>
+          </div>
+          <section class="category">
+            <ul class="book-list" id="book-list"></ul>
+          </section>
+        </div>
+      </section>
+      <!-- ---test template--- -->
+    </main>
+
+    <script>
+      //bắt path
+      function getPath() {
+        const p = new URLSearchParams(window.location.search);
+        return p.get("path");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        let dataCache = null;
+
+        // Load header.html
+        {
+          fetch("header.html")
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("header").innerHTML = data;
+              attachMenuEvents(); // gắn sự kiện sau khi header đã load
+            });
+        }
+        // Load JSON 1 lần
+        {
+          fetch("./accest/data/products.json")
+            .then((res) => res.json())
+            .then((data) => {
+              dataCache = data; // cache để dùng lại
+
+              const path = getPath();
+              if (path) {
+                const books = getBooksByPath(path, dataCache);
+                renderBreadcrumb(path);
+                renderBooks(books);
+              } else {
+                const defualtBook = getBooksByPath("TatCaSach", dataCache);
+                renderBreadcrumb("TatCaSach");
+                renderBooks(defualtBook);
+              }
+              renderMenu(
+                data.TatCaSach,
+                document.querySelector(".menu-side"),
+                "TatCaSach"
+              );
+            })
+            .catch((err) => console.error("lôi", err));
+        }
+        //render menu
+        function renderMenu(obj, divHtml, path) {
+          divHtml.innerHTML = "";
+
+          if (path === "TatCaSach") {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#" data-path="TatCaSach">
+                <strong>Tất Cả Sách</strong>
+              </a>`;
+            divHtml.appendChild(li);
+          }
+
+          //object.keys() => lấy ra ds các tên
+          Object.keys(obj).forEach((key) => {
+            if (key === "name" || key === "book") return;
+            const li = document.createElement("li");
+            // const fullpath = path + "." + key;
+            const fullpath = path ? path + "." + key : key;
+            const childobj = obj[key];
+            const hasChild =
+              typeof childobj === "object" &&
+              !Array.isArray(childobj) &&
+              Object.keys(childobj).some((k) => k !== "name" && k !== "book");
+
+            const nameMenu = obj[key].name || key;
+
+            li.innerHTML = `
+            <a href="#" data-path="${fullpath}">
+                <strong>${nameMenu}</strong>
+              </a>
+              ${
+                hasChild
+                  ? `<span class="sub-btn">
+        <img src="./accest/img/ico_morong.webp" alt="+"></span>`
+                  : ""
+              }`;
+
+            divHtml.appendChild(li);
+
+            if (hasChild) {
+              const subUl = document.createElement("ul");
+              subUl.classList.add("sub-menuSide");
+              li.appendChild(subUl);
+
+              li.querySelector(".sub-btn").addEventListener("click", (e) => {
+                e.stopPropagation();
+                li.classList.toggle("open");
+              });
+
+              renderMenu(obj[key], subUl, fullpath);
+            }
+          });
+        }
+
+        // Hàm lấy json theo path
+        function getBooksByPath(path, obj) {
+          let keys = path.split(".");
+          let current = obj;
+
+          keys.forEach((key) => {
+            if (current && current[key] !== undefined) {
+              current = current[key];
+            } else current = undefined;
+          });
+
+          return collectBooks(current);
+        }
+
+        // breadcrumb
+        function renderBreadcrumb(path, obj = dataCache) {
+          const breadcrumb = document.querySelector(".breadcrumb");
+          let html = `<a href="./index.html">Trang Chủ</a>`;
+
+          //path = TatCaSach.VanHoc.TieuThuyet
+          let parts = path.split(".");
+          let fullpath = "TatCaSach";
+          let current = obj.TatCaSach;
+          parts.forEach((part) => {
+            if (part === "TatCaSach") return;
+            fullpath += "." + part;
+            current = current[part];
+            let pathName = current.name || part;
+            html += `<span>&gt;</span>`;
+            html += `<a href="#" data-path="${fullpath}">${pathName}</a>`;
+          });
+
+          breadcrumb.innerHTML = html;
+          breadcrumb.lastChild.classList.add("current");
+        }
+
+        // Hàm gom đệ quy
+        function collectBooks(node) {
+          if (Array.isArray(node)) {
+            return node; // là mảng => return
+          }
+
+          if (typeof node === "object" && node !== null) {
+            let merged = [];
+            Object.values(node).forEach((val) => {
+              merged = merged.concat(collectBooks(val));
+            });
+            return merged;
+          }
+
+          return []; // nếu không hợp lệ
+        }
+
+        // Render sách ra HTML
+        function renderBooks(books) {
+          const bookList = document.getElementById("book-list");
+          bookList.innerHTML = ""; // clear cũ
+          books.forEach((book) => {
+            const li = document.createElement("li");
+            li.classList.add("book-item");
+            li.innerHTML = `
+        <div class="item-box">
+          <div class="item-content">
+            <div class="item-content__img-wrap">
+              <div class="item-content__img">
+                <a href="#" title="${book.title}" class="product-img">
+                  <img src="${book.image}" alt="${book.title}" />
+                </a>
+              </div>
+            </div>
+            <div class="item-content__decs">
+              <h3 class="title-item">${book.title}</h3>
+              <div class="price-lable">
+                <p class="special-price">
+                  <span class="price">${book.price.toLocaleString()} đ</span>
+                  <span class="discount">${book.discount}</span>
+                </p>
+                <p class="old-price">${book.old_price.toLocaleString()} đ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+            bookList.appendChild(li);
+          });
+        }
+
+        // Gắn sự kiện menu
+        function attachMenuEvents() {
+          document.querySelectorAll(".menu").forEach((menuEl) => {
+            menuEl.addEventListener("click", (e) => {
+              const link = e.target.closest("a[data-path]");
+              if (!link) return; // không bấm vào link
+              e.preventDefault();
+
+              const path = link.getAttribute("data-path");
+              if (dataCache) {
+                const books = getBooksByPath(path, dataCache);
+                renderBreadcrumb(path);
+                renderBooks(books);
+              }
+            });
+          });
+        }
+
+        // function attachMenuEvents() {
+        //   document.querySelectorAll(".menu a").forEach((link) => {
+        //     link.addEventListener("click", (e) => {
+        //       e.preventDefault();
+        //       console.log("1");
+        //       const path = link.getAttribute("data-path"); // ví dụ: "VanHoc.TieuThuyet"
+        //       if (dataCache) {
+        //         const books = getBooksByPath(path, dataCache);
+        //         renderBreadcrumb(path);
+        //         renderBooks(books);
+        //       }
+        //     });
+        //   });
+        // }
+      });
+    </script>
+  </body>
+</html>
