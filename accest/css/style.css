@@ -395,6 +395,7 @@ a {
 
 .item-content__img-wrap {
   width: 100%;
+  max-height: 220px;
   height: 220px;
   display: flex;
   align-items: center;
@@ -574,6 +575,52 @@ a {
   gap: 10px;
 }
 
+@media (max-width: 1024px) {
+  .book-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .book-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .book-item {
   list-style: none;
+}
+
+.pageList {
+  display: flex;
+  gap: 10px;
+  margin: 5px;
+  justify-self: center;
+}
+
+.numPage {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  align-self: center;
+  transition: background-color 0.2s ease;
+}
+
+.numPage:hover {
+  background-color: rgba(237, 217, 104, 0.705);
+}
+
+.numPage.currentPage {
+  background-color: #6cbddd;
+}
+
+.numList {
+  display: flex;
+  /* gap: 10px; */
+  /* align-items: center; */
 }

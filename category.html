@@ -97,6 +97,21 @@
             </div>
             <section class="category">
               <ul class="book-list" id="book-list"></ul>
+              <ul class="pageList">
+                <li class="numPage prevPage pageBtn">
+                  <img src="./accest/img/left_orange.webp" alt="prevPage" />
+                </li>
+                <ul class="numList">
+                  <li class="numPage">1</li>
+                  <li class="numPage">2</li>
+                  <li class="numPage">3</li>
+                  <li class="numPage">4</li>
+                  <li class="numPage">5</li>
+                </ul>
+                <li class="numPage nextPage pageBtn">
+                  <img src="./accest/img/right_orange.webp" alt="nextPage" />
+                </li>
+              </ul>
             </section>
           </div>
         </section>
@@ -258,10 +273,20 @@
         }
 
         // Render sách ra HTML
-        function renderBooks(books) {
+        let currentPage = 1;
+        const perPage = 20;
+        let currentBookList = [];
+
+        function renderBooks(books, page = 1, perPage = 20) {
+          currentBookList = books;
+          currentPage = page;
+
           const bookList = document.getElementById("book-list");
           bookList.innerHTML = ""; // clear cũ
-          books.forEach((book) => {
+          const start = (page - 1) * perPage;
+          const end = start + perPage;
+          const pageBook = books.slice(start, end);
+          pageBook.forEach((book) => {
             const li = document.createElement("li");
             li.classList.add("book-item");
             li.innerHTML = `
@@ -289,7 +314,41 @@
       `;
             bookList.appendChild(li);
           });
+
+          const tolalPage = Math.ceil(books.length / perPage);
+          renderNumPage(tolalPage, currentPage);
         }
+
+        function renderNumPage(totalPage, currentPage) {
+          const numList = document.querySelector(".numList");
+          numList.innerHTML = "";
+
+          for (let i = 1; i <= totalPage; i++) {
+            const li = document.createElement("li");
+            li.textContent = i;
+            li.classList.add("numPage");
+            if (i === currentPage) {
+              li.classList.add("currentPage");
+            }
+            li.addEventListener("click", () => {
+              renderBooks(currentBookList, i, perPage);
+            });
+            numList.appendChild(li);
+          }
+        }
+
+        document.querySelector(".nextPage").addEventListener("click", () => {
+          const tolalPage = Math.ceil(currentBookList.length / perPage);
+          if (currentPage < tolalPage) {
+            renderBooks(currentBookList, currentPage + 1, perPage);
+          }
+        });
+
+        document.querySelector(".prevPage").addEventListener("click", () => {
+          if (currentPage > 1) {
+            renderBooks(currentBookList, currentPage - 1, perPage);
+          }
+        });
 
         // Gắn sự kiện menu
         function attachMenuEvents() {
