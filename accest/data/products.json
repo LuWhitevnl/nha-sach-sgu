@@ -1,27 +1,151 @@
 {
   "TatCaSach": {
     "VanHoc": {
+      "id": "cat01",
       "name": "Văn Học",
       "TieuThuyet": {
+        "id": "cat01-1",
         "name": "Tiểu Thuyết",
         "book": [
           {
+            "id": "b001",
             "title": "Mưa Đỏ",
+            "author": "Nguyễn Nhật Ánh",
             "price": 184500,
             "old_price": 205000,
-            "discount": "10%",
+            "discount": "-10%",
             "image": "./accest/img/book/văn học/tieuthuyet/muado.webp"
           },
           {
-            "title": "Cây Cam Ngọt Của Tôi",
-            "price": 108.0,
-            "old_price": 108.0,
-            "discount": "15%",
-            "image": "./accest/img/book/văn học/tieuthuyet/cay-cam-ngot-cua-toi.webp"
+            "id": "b002",
+            "title": "Kẻ trộm sách",
+            "author": "Markus Zusak",
+            "price": 120000,
+            "old_price": 150000,
+            "discount": "-20%",
+            "image": "./accest/img/book/văn học/tieuthuyet/ke-trom-sach.webp",
+            "description": "Câu chuyện cảm động trong bối cảnh nước Đức thời Đức Quốc Xã, nơi cô bé Liesel tìm thấy sức mạnh trong những cuốn sách.",
+            "publisher": "NXB Trẻ",
+            "year": 2005,
+            "pages": 584,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "b003",
+            "title": "Tắt đèn",
+            "author": "Ngô Tất Tố",
+            "price": 65000,
+            "old_price": 95000,
+            "discount": "-15%",
+            "image": "./accest/img/book/văn học/tieuthuyet/tat-den.webp",
+            "description": "Tác phẩm hiện thực phê phán nổi tiếng, tái hiện số phận bi kịch của người nông dân Việt Nam đầu thế kỷ XX.",
+            "publisher": "NXB Văn Học",
+            "year": 1939,
+            "pages": 320,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "b004",
+            "title": "Nhà giả kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "old_price": 120000,
+            "discount": "-25%",
+            "image": "./accest/img/book/văn học/tieuthuyet/nha-gia-kim.webp",
+            "description": "Cuốn tiểu thuyết triết lý nổi tiếng, kể về hành trình theo đuổi ước mơ của chàng chăn cừu Santiago.",
+            "publisher": "NXB Văn Học",
+            "year": 1988,
+            "pages": 228,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "b005",
+            "title": "Iron Flame",
+            "author": "Rebecca Yarros",
+            "price": 280000,
+            "old_price": 350000,
+            "discount": "-20%",
+            "image": "./accest/img/book/văn học/tieuthuyet/iron-flame.webp",
+            "description": "Phần tiếp theo đầy kịch tính của series Fourth Wing, xoay quanh cuộc chiến sinh tồn và những bí mật đen tối.",
+            "publisher": "Entangled Publishing",
+            "year": 2023,
+            "pages": 623,
+            "language": "Tiếng Anh",
+            "category": "cat01-1"
+          }
+        ]
+      },
+      "TruyenNgan": {
+        "id": "cat01-2",
+        "name": "Truyện Ngắn",
+        "book": [
+          {
+            "id": "B002",
+            "title": "Kẻ trộm sách",
+            "author": "Markus Zusak",
+            "price": 120000,
+            "old_price": 150000,
+            "discount": "-20%",
+            "image": "images/ketromsach.jpg",
+            "description": "Câu chuyện cảm động trong bối cảnh nước Đức thời Đức Quốc Xã, nơi cô bé Liesel tìm thấy sức mạnh trong những cuốn sách.",
+            "publisher": "NXB Trẻ",
+            "year": 2005,
+            "pages": 584,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B003",
+            "title": "Tắt đèn",
+            "author": "Ngô Tất Tố",
+            "price": 65000,
+            "old_price": 95000,
+            "discount": "-15%",
+            "image": "images/tatden.jpg",
+            "description": "Tác phẩm hiện thực phê phán nổi tiếng, tái hiện số phận bi kịch của người nông dân Việt Nam đầu thế kỷ XX.",
+            "publisher": "NXB Văn Học",
+            "year": 1939,
+            "pages": 320,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "B004",
+            "title": "Nhà giả kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "old_price": 120000,
+            "discount": "-25%",
+            "image": "images/nhagiakim.jpg",
+            "description": "Cuốn tiểu thuyết triết lý nổi tiếng, kể về hành trình theo đuổi ước mơ của chàng chăn cừu Santiago.",
+            "publisher": "NXB Văn Học",
+            "year": 1988,
+            "pages": 228,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B005",
+            "title": "Iron Flame",
+            "author": "Rebecca Yarros",
+            "price": 280000,
+            "old_price": 350000,
+            "discount": "-20%",
+            "image": "images/ironflame.jpg",
+            "description": "Phần tiếp theo đầy kịch tính của series Fourth Wing, xoay quanh cuộc chiến sinh tồn và những bí mật đen tối.",
+            "publisher": "Entangled Publishing",
+            "year": 2023,
+            "pages": 623,
+            "language": "Tiếng Anh",
+            "category": "cat02-2"
           }
         ]
       },
       "Tho": {
+        "id": "cat01-3",
         "name": "Thơ",
         "book": [
           {
@@ -30,13 +154,207 @@
             "old_price": 120000,
             "discount": "20%",
             "image": "./accest/img/book/văn học/tho/xuandieu.webp"
+          },
+          {
+            "id": "B002",
+            "title": "Kẻ trộm sách",
+            "author": "Markus Zusak",
+            "price": 120000,
+            "old_price": 150000,
+            "discount": "-20%",
+            "image": "images/ketromsach.jpg",
+            "description": "Câu chuyện cảm động trong bối cảnh nước Đức thời Đức Quốc Xã, nơi cô bé Liesel tìm thấy sức mạnh trong những cuốn sách.",
+            "publisher": "NXB Trẻ",
+            "year": 2005,
+            "pages": 584,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B003",
+            "title": "Tắt đèn",
+            "author": "Ngô Tất Tố",
+            "price": 65000,
+            "old_price": 95000,
+            "discount": "-15%",
+            "image": "images/tatden.jpg",
+            "description": "Tác phẩm hiện thực phê phán nổi tiếng, tái hiện số phận bi kịch của người nông dân Việt Nam đầu thế kỷ XX.",
+            "publisher": "NXB Văn Học",
+            "year": 1939,
+            "pages": 320,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "B004",
+            "title": "Nhà giả kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "old_price": 120000,
+            "discount": "-25%",
+            "image": "images/nhagiakim.jpg",
+            "description": "Cuốn tiểu thuyết triết lý nổi tiếng, kể về hành trình theo đuổi ước mơ của chàng chăn cừu Santiago.",
+            "publisher": "NXB Văn Học",
+            "year": 1988,
+            "pages": 228,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B005",
+            "title": "Iron Flame",
+            "author": "Rebecca Yarros",
+            "price": 280000,
+            "old_price": 350000,
+            "discount": "-20%",
+            "image": "images/ironflame.jpg",
+            "description": "Phần tiếp theo đầy kịch tính của series Fourth Wing, xoay quanh cuộc chiến sinh tồn và những bí mật đen tối.",
+            "publisher": "Entangled Publishing",
+            "year": 2023,
+            "pages": 623,
+            "language": "Tiếng Anh",
+            "category": "cat02-2"
+          }
+        ]
+      },
+      "VanHocVn": {
+        "id": "cat01-4",
+        "name": "Văn Học Việt Nam",
+        "book": [
+          {
+            "id": "B002",
+            "title": "Kẻ trộm sách",
+            "author": "Markus Zusak",
+            "price": 120000,
+            "old_price": 150000,
+            "discount": "-20%",
+            "image": "images/ketromsach.jpg",
+            "description": "Câu chuyện cảm động trong bối cảnh nước Đức thời Đức Quốc Xã, nơi cô bé Liesel tìm thấy sức mạnh trong những cuốn sách.",
+            "publisher": "NXB Trẻ",
+            "year": 2005,
+            "pages": 584,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B003",
+            "title": "Tắt đèn",
+            "author": "Ngô Tất Tố",
+            "price": 65000,
+            "old_price": 95000,
+            "discount": "-15%",
+            "image": "images/tatden.jpg",
+            "description": "Tác phẩm hiện thực phê phán nổi tiếng, tái hiện số phận bi kịch của người nông dân Việt Nam đầu thế kỷ XX.",
+            "publisher": "NXB Văn Học",
+            "year": 1939,
+            "pages": 320,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "B004",
+            "title": "Nhà giả kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "old_price": 120000,
+            "discount": "-25%",
+            "image": "images/nhagiakim.jpg",
+            "description": "Cuốn tiểu thuyết triết lý nổi tiếng, kể về hành trình theo đuổi ước mơ của chàng chăn cừu Santiago.",
+            "publisher": "NXB Văn Học",
+            "year": 1988,
+            "pages": 228,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B005",
+            "title": "Iron Flame",
+            "author": "Rebecca Yarros",
+            "price": 280000,
+            "old_price": 350000,
+            "discount": "-20%",
+            "image": "images/ironflame.jpg",
+            "description": "Phần tiếp theo đầy kịch tính của series Fourth Wing, xoay quanh cuộc chiến sinh tồn và những bí mật đen tối.",
+            "publisher": "Entangled Publishing",
+            "year": 2023,
+            "pages": 623,
+            "language": "Tiếng Anh",
+            "category": "cat02-2"
+          }
+        ]
+      },
+      "GiaTuong": {
+        "id": "cat01-5",
+        "name": "Giả Tưởng",
+        "book": [
+          {
+            "id": "B002",
+            "title": "Kẻ trộm sách",
+            "author": "Markus Zusak",
+            "price": 120000,
+            "old_price": 150000,
+            "discount": "-20%",
+            "image": "images/ketromsach.jpg",
+            "description": "Câu chuyện cảm động trong bối cảnh nước Đức thời Đức Quốc Xã, nơi cô bé Liesel tìm thấy sức mạnh trong những cuốn sách.",
+            "publisher": "NXB Trẻ",
+            "year": 2005,
+            "pages": 584,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B003",
+            "title": "Tắt đèn",
+            "author": "Ngô Tất Tố",
+            "price": 65000,
+            "old_price": 95000,
+            "discount": "-15%",
+            "image": "images/tatden.jpg",
+            "description": "Tác phẩm hiện thực phê phán nổi tiếng, tái hiện số phận bi kịch của người nông dân Việt Nam đầu thế kỷ XX.",
+            "publisher": "NXB Văn Học",
+            "year": 1939,
+            "pages": 320,
+            "language": "Tiếng Việt",
+            "category": "cat01-1"
+          },
+          {
+            "id": "B004",
+            "title": "Nhà giả kim",
+            "author": "Paulo Coelho",
+            "price": 89000,
+            "old_price": 120000,
+            "discount": "-25%",
+            "image": "images/nhagiakim.jpg",
+            "description": "Cuốn tiểu thuyết triết lý nổi tiếng, kể về hành trình theo đuổi ước mơ của chàng chăn cừu Santiago.",
+            "publisher": "NXB Văn Học",
+            "year": 1988,
+            "pages": 228,
+            "language": "Tiếng Việt",
+            "category": "cat02-1"
+          },
+          {
+            "id": "B005",
+            "title": "Iron Flame",
+            "author": "Rebecca Yarros",
+            "price": 280000,
+            "old_price": 350000,
+            "discount": "-20%",
+            "image": "images/ironflame.jpg",
+            "description": "Phần tiếp theo đầy kịch tính của series Fourth Wing, xoay quanh cuộc chiến sinh tồn và những bí mật đen tối.",
+            "publisher": "Entangled Publishing",
+            "year": 2023,
+            "pages": 623,
+            "language": "Tiếng Anh",
+            "category": "cat02-2"
           }
         ]
       }
     },
     "KinhTe": {
+      "id": "cat02",
       "name": "Kinh Tế",
       "KinhTeHoc": {
+        "id": "cat02-1",
         "name": "Kinh Tế Học",
         "book": [
           {
@@ -48,7 +366,16 @@
           }
         ]
       },
+      "QTKD": {
+        "id": "cat02-2",
+        "name": "Quản Trị Kinh Doanh"
+      },
+      "TaiChinhNganHang": {
+        "id": "cat02-3",
+        "name": "Tài Chính Ngân Hàng"
+      },
       "Marketing": {
+        "id": "cat02-4",
         "name": "Marketting",
         "book": [
           {
@@ -59,6 +386,78 @@
             "image": "./accest/img/book/kinhte/marketing.webp"
           }
         ]
+      }
+    },
+    "TamLy": {
+      "id": "cat03",
+      "name": "Tâm Lý",
+      "TamLyHoc": {
+        "id": "cat03-1",
+        "name": "Tâm Lý Học",
+        "book": []
+      },
+      "KyNangSong": {
+        "id": "cat03-2",
+        "name": "Kỹ Năng Sống",
+        "book": []
+      },
+      "KyNangMem": {
+        "id": "cat03-3",
+        "name": "Kỹ Năng Mềm",
+        "book": []
+      },
+      "TamLyHanhVi": {
+        "id": "cat03-4",
+        "name": "Tâm Lý Hành Vi",
+        "book": []
+      }
+    },
+    "KhoaHoc": {
+      "id": "cat04",
+      "name": "Khoa Học",
+      "CNTT": {
+        "id": "cat04-1",
+        "name": "Công Nghệ Thông Tin",
+        "book": []
+      },
+      "DienTu": {
+        "id": "cat04-2",
+        "name": "Điện tử",
+        "book": []
+      },
+      "VuTru": {
+        "id": "cat04-3",
+        "name": "Khoa Học Vũ Trụ",
+        "book": []
+      },
+      "YHoc": {
+        "id": "cat04-4",
+        "name": "Y Học",
+        "book": []
+      }
+    },
+    "NgoaiNgu": {
+      "id": "cat05",
+      "name": "Ngoại Ngữ",
+      "Anh": {
+        "id": "cat05-1",
+        "name": "Anh",
+        "book": []
+      },
+      "Duc": {
+        "id": "cat05-2",
+        "name": "Đức",
+        "book": []
+      },
+      "Y": {
+        "id": "cat05-3",
+        "name": "Ý",
+        "book": []
+      },
+      "Nhat": {
+        "id": "cat05-4",
+        "name": "Nhật",
+        "book": []
       }
     }
   }

@@ -27,77 +27,79 @@
     <div id="header"></div>
 
     <main class="main">
-      <section class="main-top">
-        <section class="menu breadcrumb">
-          <a href="./index.html" class="current">Trang Chủ</a>
-        </section>
-      </section>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="menu-left">
-            <div class="group-menu">
-              <!-- tree
-                      all 
-                          vanhoc
-                              tieuthuyet
-                              tho
-                              ...
-                          kinhte
-                              kinhtehoc
-                              marketing
-                          ... -->
-              <h3>Nhóm Sản Phẩm</h3>
-              <ul class="menu-side menu"></ul>
-            </div>
-            <div class="filter">
-              <div class="filter-price">
-                <h3>Giá</h3>
-                <label
-                  ><input
-                    type="checkbox"
-                    class="price-check"
-                    value="0-100000"
-                  />
-                  0đ - 100,000 đ</label
-                ><br />
-                <label
-                  ><input
-                    type="checkbox"
-                    class="price-check"
-                    value="100000-200000"
-                  />
-                  100,000 đ - 200,000 đ</label
-                ><br />
-                <label
-                  ><input
-                    type="checkbox"
-                    class="price-check"
-                    value="200000-500000"
-                  />
-                  200,000 đ - 500,000 đ</label
-                ><br />
-                <label
-                  ><input
-                    type="checkbox"
-                    class="price-check"
-                    value="500000-Infinity"
-                  />
-                  Trên 500,000 đ</label
-                ><br />
-              </div>
-              <div class="filter-age"></div>
-            </div>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="toolbar">
-            <div class="tool-filter"></div>
-            <div class="tool-sort"><span>sắp xếp theo</span></div>
-          </div>
-          <section class="category">
-            <ul class="book-list" id="book-list"></ul>
+      <section class="container">
+        <section class="main-top">
+          <section class="menu breadcrumb">
+            <a href="./index.html" class="current">Trang Chủ</a>
           </section>
-        </div>
+        </section>
+        <section class="hero">
+          <div class="hero-left">
+            <div class="menu-left">
+              <div class="group-menu">
+                <!-- tree
+                        all 
+                            vanhoc
+                                tieuthuyet
+                                tho
+                                ...
+                            kinhte
+                                kinhtehoc
+                                marketing
+                            ... -->
+                <h3>Nhóm Sản Phẩm</h3>
+                <ul class="menu-side menu"></ul>
+              </div>
+              <div class="filter">
+                <div class="filter-price">
+                  <h3>Giá</h3>
+                  <label
+                    ><input
+                      type="checkbox"
+                      class="price-check"
+                      value="0-100000"
+                    />
+                    0đ - 100,000 đ</label
+                  ><br />
+                  <label
+                    ><input
+                      type="checkbox"
+                      class="price-check"
+                      value="100000-200000"
+                    />
+                    100,000 đ - 200,000 đ</label
+                  ><br />
+                  <label
+                    ><input
+                      type="checkbox"
+                      class="price-check"
+                      value="200000-500000"
+                    />
+                    200,000 đ - 500,000 đ</label
+                  ><br />
+                  <label
+                    ><input
+                      type="checkbox"
+                      class="price-check"
+                      value="500000-Infinity"
+                    />
+                    Trên 500,000 đ</label
+                  ><br />
+                </div>
+                <div class="filter-age"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="toolbar">
+              <div class="tool-filter"></div>
+              <div class="tool-sort"><span>sắp xếp theo</span></div>
+            </div>
+            <section class="category">
+              <ul class="book-list" id="book-list"></ul>
+            </section>
+          </div>
+        </section>
       </section>
       <!-- ---test template--- -->
     </main>
@@ -160,7 +162,7 @@
 
           //object.keys() => lấy ra ds các tên
           Object.keys(obj).forEach((key) => {
-            if (key === "name" || key === "book") return;
+            if (key === "name" || key === "book" || key === "id") return;
             const li = document.createElement("li");
             // const fullpath = path + "." + key;
             const fullpath = path ? path + "." + key : key;
@@ -168,7 +170,9 @@
             const hasChild =
               typeof childobj === "object" &&
               !Array.isArray(childobj) &&
-              Object.keys(childobj).some((k) => k !== "name" && k !== "book");
+              Object.keys(childobj).some(
+                (k) => k !== "name" && k !== "book" && k !== "id"
+              );
 
             const nameMenu = obj[key].name || key;
 
