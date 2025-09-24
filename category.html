@@ -54,35 +54,19 @@
                 <div class="filter-price">
                   <h3>Giá</h3>
                   <label
-                    ><input
-                      type="checkbox"
-                      class="price-check"
-                      value="0-100000"
-                    />
-                    0đ - 100,000 đ</label
+                    ><input type="radio" name="price" value="0-100000" /> 0đ -
+                    100,000 đ</label
                   ><br />
                   <label
-                    ><input
-                      type="checkbox"
-                      class="price-check"
-                      value="100000-200000"
-                    />
+                    ><input type="radio" name="price" value="100000-200000" />
                     100,000 đ - 200,000 đ</label
                   ><br />
                   <label
-                    ><input
-                      type="checkbox"
-                      class="price-check"
-                      value="200000-500000"
-                    />
+                    ><input type="radio" name="price" value="200000-500000" />
                     200,000 đ - 500,000 đ</label
                   ><br />
                   <label
-                    ><input
-                      type="checkbox"
-                      class="price-check"
-                      value="500000-Infinity"
-                    />
+                    ><input type="radio" name="price" value="500000-Infinity" />
                     Trên 500,000 đ</label
                   ><br />
                 </div>
@@ -131,6 +115,9 @@
 
         // Load header.html
         {
+          /*
+           * dùng fetch bắt api
+           */
           fetch("header.html")
             .then((res) => res.text())
             .then((data) => {
@@ -317,6 +304,7 @@
 
           const tolalPage = Math.ceil(books.length / perPage);
           renderNumPage(tolalPage, currentPage);
+          // priceFilter(currentBookList);
         }
 
         function renderNumPage(totalPage, currentPage) {
@@ -349,6 +337,20 @@
             renderBooks(currentBookList, currentPage - 1, perPage);
           }
         });
+
+        //filter
+        //price
+        function priceFilter(books) {
+          document.querySelectorAll("input[name='price']").forEach((inp) => {
+            inp.addEventListener("change", (e) => {
+              const [min, max] = e.target.value.split("-").map(Number);
+              const bookPriceIn = books.filter((b) => {
+                return b.price >= min && b.price <= max;
+              });
+              renderBooks(bookPriceIn);
+            });
+          });
+        }
 
         // Gắn sự kiện menu
         function attachMenuEvents() {

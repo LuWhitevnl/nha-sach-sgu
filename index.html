@@ -272,14 +272,12 @@
               </div>
             </div>
           </div>
-          <nav class="search-bar">
-            <div class="search-bar__form">
-              <input type="text" placeholder="Tìm Kiếm" class="font-input" />
-            </div>
-            <button class="search-btn">
+          <form action="" class="search-bar">
+            <input type="text" placeholder="Tìm kiếm" name="q" />
+            <button type="submit" class="search-btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-          </nav>
+          </form>
           <nav class="navbar">
             <ul class="narbar__list">
               <li class="narbar__item noti">
@@ -711,64 +709,66 @@
         cum, impedit explicabo odit maiores ullam esse rerum temporibus non aut
         voluptatem dolores dicta accusamus corporis dolorem!
       </p>
-    </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const sliderBox = document.querySelector(".hero__slider--box");
-        const slides = sliderBox.querySelectorAll("img");
-        const dots = document.querySelectorAll(".dot-container .dot");
-        const prevBtn = document.querySelector(".hero__btn.prev");
-        const nextBtn = document.querySelector(".hero__btn.next");
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const sliderBox = document.querySelector(".hero__slider--box");
+          const slides = sliderBox.querySelectorAll("img");
+          const dots = document.querySelectorAll(".dot-container .dot");
+          const prevBtn = document.querySelector(".hero__btn.prev");
+          const nextBtn = document.querySelector(".hero__btn.next");
 
-        let currentIndex = 0;
-        const totalSlides = slides.length;
+          let currentIndex = 0;
+          const totalSlides = slides.length;
 
-        const showSlide = (index) => {
-          sliderBox.style.transform = `translateX(-${index * 100}%)`;
-          dots.forEach((dot) => dot.classList.remove("active"));
-          dots[index].classList.add("active");
-        };
+          const showSlide = (index) => {
+            sliderBox.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot) => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+          };
 
-        nextBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex + 1) % totalSlides;
-          showSlide(currentIndex);
-        });
-
-        prevBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-          showSlide(currentIndex);
-        });
-
-        dots.forEach((dot, i) => {
-          dot.addEventListener("click", () => {
-            currentIndex = i;
+          nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
             showSlide(currentIndex);
           });
+
+          prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+          });
+
+          dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+              currentIndex = i;
+              showSlide(currentIndex);
+            });
+          });
+
+          // tự động chạy mỗi 3s
+          setInterval(() => {
+            showSlide((currentIndex + 1) % totalSlides);
+          }, 6000);
+
+          // khởi tạo
+          showSlide(currentIndex);
+
+          // flash-sale
+          //clock
+          function updateClock() {
+            const now = new Date();
+            const hour = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+            const seconds = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("hour").innerHTML = hour;
+            document.getElementById("minute").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+          }
+
+          setInterval(updateClock, 1000);
+
+          //fs-slider
         });
-
-        // tự động chạy mỗi 3s
-        setInterval(nextSlide, 6000);
-
-        // khởi tạo
-        showSlide(currentIndex);
-
-        // flash-sale
-        //clock
-        function updateClock() {
-          const now = new Date();
-          const hour = String(now.getHours()).padStart(2, "0");
-          const minutes = String(now.getMinutes()).padStart(2, "0");
-          const seconds = String(now.getSeconds()).padStart(2, "0");
-          document.getElementById("hour").innerHTML = hour;
-          document.getElementById("minute").innerHTML = minutes;
-          document.getElementById("seconds").innerHTML = seconds;
-        }
-
-        setInterval(updateClock, 1000);
-
-        //fs-slider
-      });
-    </script>
+      </script>
+    </main>
     <script src="./accest/js/main.js"></script>
   </body>
 </html>
